@@ -1,0 +1,30 @@
+{
+  "name": "testcafe-basics",
+  "version": "1.0.0",
+  "description": "Testcafe snippets",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --require ts-node/register ./test/*.spec.ts",
+    "start": "npm run build && node dist/bin/www",
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files"
+  },
+  "author": "Selvyn",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "mocha": "^8.2.1",
+    "rx": "^4.1.0",
+    "rxjs": "^6.6.3"
+  },
+  "devDependencies": {
+    "@types/mocha": "^8.2.0",
+    "assert": "^2.0.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "requirejs": "^2.3.6",
+    "testcafe": "^1.10.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}
