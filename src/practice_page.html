@@ -17,33 +17,6 @@
                 console.log( selectedObj.value );
             }
 
-            function calculateYears(selectedObj)
-            {
-                var today = new Date();
-                var todaysYear = Number((""+today.getFullYear()).substring(2, 4));
-
-                var inputedYear = Number(selectedObj.value.substring(2, 4));
-                console.log( "Inputed Year: " + inputedYear );
-                var offset = 0;
-
-                if( inputedYear > todaysYear )
-                    offset = 100 - inputedYear;
-
-                var age = 0;
-                if( offset > 0 )
-                    age = offset + todaysYear;
-                else
-                    age = todaysYear - inputedYear;
-
-                console.log( "Age: " + age );
-
-                var el = document.getElementById('age');
-                var data = (el.innerText || el.textContent);
-                el.innerText = age;
-                console.log( data );  
-                selectedObj.value="2000-01-01"
-            }
-
             function getAgeInYears(dateVal) 
             {
                 var birthday = new Date(dateVal.value),
@@ -63,7 +36,7 @@
             <p>Last name: <input id="lastname" name="last_name" type="text" /></p>
             <p>User name: <input id="username" name="Username" type="text" /></p>
             <p>Password: <input id="pwd" name="password" type="password" /></p>
-            <p>Email address: <input id="emailaddr" name="email_address" type="text" /></p>
+            <p>Email address: <input id="emailaddr" name="email_address" type="email" /></p>
             <p><label for="birthday">Birthday:</label> <input id="birthday" name="birthday" type="date"  onchange="getAgeInYears(this)"/></p>
             <p><label>Age: </label><label id="age" for="_age"></label></p>
             <button type="submit" id="submit-button">Submit</button>
