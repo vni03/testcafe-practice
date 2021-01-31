@@ -21,6 +21,19 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}\\simple-test.js"
+        },
+        {
+            "type": "node",
+            "protocol": "inspector",
+            "request": "launch",
+            "name": "Launch TestCafe",
+            "program": "${workspaceRoot}/node_modules/testcafe/bin/testcafe.js",
+            "args": [
+                "chrome",
+                "${relativeFile}"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceRoot}"
         }
     ]
 }

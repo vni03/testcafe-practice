@@ -1,5 +1,5 @@
 import {Selector} from "testcafe";
-import sleep from "../src/sleep_utils"
+import sleep from "../src/func_utils"
 
 fixture `Simple test`            // Notice the back-tick, NOT a single or double quote
     .page `../src/simple_page.html`     
