@@ -13,39 +13,39 @@ fixture `Page Redirection Tests`            // Notice the back-tick, NOT a singl
         const location = await getWindowLocation();
         const expectedResult = 'file:///C:/work/git/nodejs-sky/testcafe-quicklab-practice_tests/src/practice_page.html';
 
-        //console.log( location );
-        await t     // We wait on a Promise
-             .expect(location).eql(expectedResult, 'File paths NOT matched');
+        console.log( location );
+
+        // add your assert here...
+        // assert that the current location mataches the expectedResult
+
+        // the sleep isn't needed but useful for pausing the browser, value is in milliseconds
         await sleep(3000);
     });
 
     test('navigate away, then back, then away', async t => {
         // arrange...
-        const bbc = Selector("#bbc");
-        const qa = Selector("#qa");
-        const location = await getWindowLocation();
+        // fetch the tags for BBC and QA, store them in the two variable bbc and qa respectively
 
-        let expectedBBCResult = await bbc.getAttribute("href");
-        console.log(expectedBBCResult);
-        let expectedQAResult = await qa.getAttribute("href");
-        console.log(expectedQAResult);
+        // get your current location, store it in a location variable - this is home location
 
-        // act...
-        await t     // We wait on a Promise
-            .click(bbc);
-        
-        let currentLocation = removeTrailingOblique(await getWindowLocation());
-
-        await t
-            // assert..
-            .expect(currentLocation).eql(expectedBBCResult, 'File paths NOT matched')
-            .navigateTo(location)
-            .click(qa);
+        // set up your expected values for the BBC and QA tags.  
+        // Use the variables from above and call await bbc.getAttribute("href")
+        // Use console.log() or the debugger to see what above code does
 
         // act...
-        currentLocation = removeTrailingOblique(await getWindowLocation());
+        // navigate to the bbc by clicking on the page
+        // get your current location
 
-        await t
-            // assert..
-            .expect(currentLocation).eql(expectedQAResult, 'File paths NOT matched')    
+        // assert...
+        // aasert that the current location matches the expected location for the bbc
+
+        // arrange...
+        // navigate back to the home location using t.navigateTo()
+
+        // act...
+        // navigate to QA by clicking on the page
+        // get your current location
+
+        // assert...
+        // aasert that the current location matches the expected location for the QA
     });
