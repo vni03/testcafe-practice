@@ -34,7 +34,7 @@ fixture `Page Redirection Tests`            // Notice the back-tick, NOT a singl
         const qa = Selector('#qa')
 
         // get your current location, store it in a location variable - this is home location
-        const home_location = await getWindowLocation();
+        const home_location = removeTrailingOblique( await getWindowLocation());
 
         // set up your expected values for the BBC and QA tags.  
         const bbc_url = await bbc.getAttribute('href');
@@ -48,10 +48,10 @@ fixture `Page Redirection Tests`            // Notice the back-tick, NOT a singl
         // get your current location
 
         await t
-            .click(bbc);
-            .setNativeDialogHandler(() => true )
-            .click(".sign_in-exit");
-        let current_location = await getWindowLocation();
+            .click(bbc)
+            .setNativeDialogHandler(() => true );
+   //         .click(".sign_in-exit");
+        let current_location = removeTrailingOblique(await getWindowLocation());
 
 
         // assert...
@@ -66,8 +66,8 @@ fixture `Page Redirection Tests`            // Notice the back-tick, NOT a singl
         // act...
         // navigate to QA by clicking on the page
         // get your current location
-        await t.click(qa)
-        current_location = await getWindowLocation();
+        await t.click(qa);
+        current_location = removeTrailingOblique(await getWindowLocation());
 
 
         // assert...

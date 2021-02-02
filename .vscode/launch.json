@@ -29,6 +29,7 @@
             "name": "Launch TestCafe",
             "program": "${workspaceRoot}/node_modules/testcafe/bin/testcafe.js",
             "args": [
+                "--skip-js-errors",
                 "chrome",
                 "${relativeFile}"
             ],
