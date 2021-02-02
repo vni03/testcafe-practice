@@ -1,5 +1,6 @@
 import {Selector} from "testcafe";
 import sleep from "../src/func_utils"
+import { ClientFunction } from 'testcafe';
 
 
 fixture `Personal Details Tests`            // Notice the back-tick, NOT a single or double quote
@@ -39,7 +40,7 @@ fixture `Personal Details Tests`            // Notice the back-tick, NOT a singl
 
     })
 
-    test('Age is populated with the right date', async t => {
+    test('Age is populated with the right age', async t => {
         const date_of_birth = Selector('#birthday')
         const age = Selector('#age');
 
